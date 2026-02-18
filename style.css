@@ -2,55 +2,94 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-html,body{
-    width:100%;
-    height: 100%;
-    
+body {
+  background: #b0cefc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-body{
-    background-color: rgb(248, 192, 201) ;
-    
+.container {
+  display: flex;
+  width: 90%;
+  height: 90vh;
+  border-radius: 20px;
+  background: #1e2838;
+  overflow: hidden;
 }
 
-.shape-0 {
-  padding:10px;
-  border-radius:20px;
-}
-.shape-0:hover {
-  color:#fff;
-  background:rgb(144, 192, 255);
+.tools {
+  width: 250px;
+  background: #1e293b;
+  color: white;
+  padding: 20px;
 }
 
-.Main{
-    margin-left : 50;
+.title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: block;
 }
 
-.Tools{
-    width: 100%;
-    height:100%;
-    display: flex;
-    margin-left : 50;
+.options {
+  list-style: none;
 }
 
-.pencil{
-    width: 20%;
-    height:100%;
-    display: flex;
-    margin-left : 50;
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
 }
 
-.Tools:hover{
-    color:#fff;
-    background:black;   
+.option:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.option.active {
+  background: #3b82f6;
 }
     
 .icon {
-  width: 24px;
-  height: 24px;
-  fill: rgb(255, 255, 255);
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
+canvas {
+  background: white;
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 100%;
+}
 
+button.tool {
+  margin: 10px;
+  padding: 10px 15px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s;
+}
+
+button.tool:hover {
+  background: #2563eb;
+}
+
+#sizeSlider {
+  width: 100%;
+  margin: 10px 0;
+}

@@ -29,7 +29,7 @@
                             <span>Brush</span>
                         </li>
 
-                        <li class="option">
+                        <li class="option">Slider
                             <input type="range" id="sizeSlider" min="1" max="30" value="5" />
                         </li>
 
@@ -81,17 +81,17 @@
                     </ul>
                 </div>
 
+                <hr size="1px">
+                
                 <div class="row shapes">
-                    <p class="title"><strong>Shapes</strong></p>
+                    <p class="title" style = "margin-top: 15px;"><strong>Shapes</strong></p>
 
-                    <label>
+                    <label style="margin: 10px;">
                         <input type="checkbox" id="fillColor" />
                         Fill Color
                     </label>
 
                     <ul class="options">
-
-
                         <li class="option tool" id="line">
                             <svg viewBox="0 0 24 24" class="icon">
                                 <line x1="4" y1="20" x2="20" y2="4"
@@ -130,7 +130,7 @@
 
                         <li class="option tool" id="triangle">
                             <svg viewBox="0 0 24 24" class="icon">
-                                <path d="M12 4L21 20H3L12 4Z" fill="currentColor"/>
+                                <path d="M12 4L21 20H3L12 4Z" fill="none" stroke="currentColor"/>
                             </svg>
                             <span>Triangle</span>
                         </li>
@@ -149,7 +149,7 @@
                         <li class="option tool" id="hexagon">
                             <svg viewBox="0 0 24 24" class="icon">
                                 <polygon points="12,4 19,8 19,16 12,20 5,16 5,8"
-                                fill="currentColor"/>
+                                fill="none" stroke="currentColor"/>
                             </svg>
                             <span>Hexagon</span>
                         </li>
@@ -168,15 +168,11 @@
                     </ul>
                 </div>
 
+                <hr size="1px">
+
                 <div class="row colors">
-                    <label class="title"><strong>Colors</strong></label>
+                    <label class="title" style="margin-top: 15px;"><strong>Colors</strong></label>
                     <ul class="options">
-                        <li class="option"></li>
-                        <li class="option selected"></li>
-                        <li class="option"></li>
-                        <li class="option"></li>
-                        <li class="option"></li>
-                        <li class="option">
                         <input type="color" value="#00FF00" name="" id="colorPicker" />
                         </li>
                     </ul>

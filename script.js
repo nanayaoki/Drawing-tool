@@ -5,13 +5,11 @@ const colorBtns = document.querySelectorAll(".colors .option");
 const colorPicker = document.querySelector("#colorPicker");
 const ctx = canvas.getContext("2d");
 
-// FIX 1: Use getElementById instead of querySelector with class
 const clearCanvasBtn = document.getElementById("clearCanvas");
 const saveImageBtn = document.getElementById("saveImg");
 const undoButton = document.getElementById("undo");
 const redoButton = document.getElementById("redo");
 
-// FIX 2: Only select drawing tool buttons, NOT undo/redo/clear/save
 const toolBtns = document.querySelectorAll(".tool[id]:not(#undo):not(#redo):not(#clearCanvas):not(#saveImg)");
 
 let prevMouseX, prevMouseY, snapshot, isDrawing = false;
@@ -121,7 +119,6 @@ const startDraw = (e) => {
   snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 };
 
-// FIX 3: Corrected brush/pencil/eraser logic
 const drawing = (e) => {
   if (!isDrawing) return;
   ctx.putImageData(snapshot, 0, 0);
@@ -164,7 +161,6 @@ const drawing = (e) => {
   }
 };
 
-// FIX 4: Only drawing tool buttons change selectedTool
 toolBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     document.querySelector(".option.active")?.classList.remove("active");
@@ -189,14 +185,12 @@ colorPicker.addEventListener("input", () => {
   selectedColor = colorPicker.value;
 });
 
-// FIX 5: Correct element references for clear and save
 clearCanvasBtn.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   setCanvasBackground();
   saveState();
 });
 
-// FIX 6: Fixed template literal for filename
 saveImageBtn.addEventListener("click", () => {
   const link = document.createElement("a");
   link.download = `${Date.now()}.jpg`;
@@ -204,7 +198,6 @@ saveImageBtn.addEventListener("click", () => {
   link.click();
 });
 
-// Undo
 undoButton.addEventListener("click", () => {
   if (historyStep > 0) {
     historyStep--;
@@ -217,11 +210,10 @@ undoButton.addEventListener("click", () => {
   } else if (historyStep === 0) {
     historyStep = -1;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    setCanvasBackground(); // FIX 7: restore white bg on full undo
+    setCanvasBackground(); 
   }
 });
 
-// Redo
 redoButton.addEventListener("click", () => {
   if (historyStep < history.length - 1) {
     historyStep++;

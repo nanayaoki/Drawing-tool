@@ -28,6 +28,10 @@ A beginner-friendly drawing application built using HTML, CSS, and JavaScript.
 2. Open `index.html` in your browser
 3. Start drawing 
 
+#Preview of website
+![alt text](image.png)
+
+
 ## 👨‍💻 Author
 
 Om Adpawar  
